@@ -21,7 +21,7 @@ function wordSetTime() {
       // Stops execution of action at set interval
       clearTimeout(timerInterval);
       
-      wordCount = "";
+      wordCount = -1;
       // Calls function to create and append image
     //  sendMessage();
     }
@@ -198,6 +198,7 @@ function Gilliamfind(el) {
     $(".words").append(
       `<p><span style="color:black">${finalLeftWord}</span><span style="color:red">${finalGilliamWord}</span"><span style="color:black">${finalRightWord}</span></p>`
     );
+      setTimeout(function(){ ($("p").remove());}, 800);             
   });
 }
 wordSetTime()
