@@ -2,6 +2,36 @@ finalGilliamWordGroup = [];
 finalLeftWordGroup = [];
 finalRightWordGroup = [];
 let keep = "";
+let wordArrayGroup = ["light","night","fright"];
+let nextWord = ""
+
+
+
+
+function wordSetTime() {
+  // Sets interval in variable
+  
+  let wordCount = -1
+  let timerInterval = setInterval(function() {
+    wordCount++;
+    // timeEl.textContent = secondsLeft;
+   nextWord = wordArrayGroup[wordCount]
+   Gilliamfind(nextWord);
+    if(wordCount>= wordArrayGroup.length -1){
+      // Stops execution of action at set interval
+      clearTimeout(timerInterval);
+      
+      wordCount = "";
+      // Calls function to create and append image
+    //  sendMessage();
+    }
+  }, 1000);
+
+ 
+  
+}
+
+
 
 function Gilliamfind(el) {
   const check = el;
@@ -170,5 +200,6 @@ function Gilliamfind(el) {
     );
   });
 }
+wordSetTime()
 
-Gilliamfind("crane");
+// Gilliamfind(nextWord);
