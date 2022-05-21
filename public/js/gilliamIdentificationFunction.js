@@ -2,36 +2,28 @@ finalGilliamWordGroup = [];
 finalLeftWordGroup = [];
 finalRightWordGroup = [];
 let keep = "";
-let wordArrayGroup = ["light","night","fright"];
-let nextWord = ""
-
-
-
+let wordArrayGroup = ["light", "night", "fright"];
+let nextWord = "";
 
 function wordSetTime() {
   // Sets interval in variable
-  
-  let wordCount = -1
-  let timerInterval = setInterval(function() {
+
+  let wordCount = -1;
+  let timerInterval = setInterval(function () {
     wordCount++;
     // timeEl.textContent = secondsLeft;
-   nextWord = wordArrayGroup[wordCount]
-   Gilliamfind(nextWord);
-    if(wordCount>= wordArrayGroup.length -1){
+    nextWord = wordArrayGroup[wordCount];
+    Gilliamfind(nextWord);
+    if (wordCount >= wordArrayGroup.length - 1) {
       // Stops execution of action at set interval
       clearTimeout(timerInterval);
-      
+
       wordCount = -1;
       // Calls function to create and append image
-    //  sendMessage();
+      //  sendMessage();
     }
   }, 1000);
-
- 
-  
 }
-
-
 
 function Gilliamfind(el) {
   const check = el;
@@ -198,9 +190,9 @@ function Gilliamfind(el) {
     $(".words").append(
       `<p><span style="color:black">${finalLeftWord}</span><span style="color:red">${finalGilliamWord}</span"><span style="color:black">${finalRightWord}</span></p>`
     );
-      setTimeout(function(){ ($("p").remove());}, 800);             
+    setTimeout(function () {
+      $("p").remove();
+    }, 800);
   });
 }
-wordSetTime()
-
-// Gilliamfind(nextWord);
+wordSetTime();
