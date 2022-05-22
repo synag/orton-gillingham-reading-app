@@ -2,13 +2,17 @@ const router = require('express').Router();
 
 
 
-
-
-//get array of works - ight 
-// get array of vowels
-// get array consensant
-// site word
-
+//get array word set 1 
+//get array word set 2 
+//get array word set 3 
+//get array word set 4 
+//get array word set 5
+//get array word set 5
 
 
 //Create new words to the list
+
+
+
+
+//note - ideas - Voice  and Video - o
