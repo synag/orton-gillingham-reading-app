@@ -1,7 +1,7 @@
 const User = require('./User');
-const ortonGilliamhamwords = require('./orton-gilliamham-words');
+const Ortonwords = require('./Ortonwords');
 
-User.hasMany(ortonGilliamhamwords, {
+User.hasMany(Ortonwords, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
@@ -10,4 +10,4 @@ orton-gilliamham0words.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User,ortonGilliamhamwords };
+module.exports = { User,Ortonwords };

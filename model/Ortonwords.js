@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class ortonGilliamhamwords extends Model {}
+class Ortonwords extends Model {}
 
-ortonGilliamhamwords.init(
+Ortonwords.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -57,8 +57,8 @@ ortonGilliamhamwords.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "project",
+    modelName: "ortonwords",
   }
 );
 
-module.exports = Project;
+module.exports = Ortonwords;
