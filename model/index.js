@@ -6,7 +6,7 @@ User.hasMany(Ortonwords, {
   onDelete: 'CASCADE'
 });
 
-orton-gilliamham0words.belongsTo(User, {
+Ortonwords.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
