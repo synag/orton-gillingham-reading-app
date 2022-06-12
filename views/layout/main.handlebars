@@ -12,7 +12,13 @@
     <title>GilliamApp</title>
   </head>
   <body>
-    <div class="words"></div>
+    {{!-- <div class="words"></div> --}}
+
+    {{{word_list({{#each familyExpense}}
+       {{/each}}
+    )}} 
+    
+    
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

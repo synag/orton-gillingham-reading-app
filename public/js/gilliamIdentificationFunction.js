@@ -5,6 +5,12 @@ let keep = "";
 let wordArrayGroup = ["light", "night", "fright","might"];
 let nextWord = "";
 
+
+
+console.log(word_list)
+
+
+
 function wordSetTime() {
   // Sets interval in variable
   let wordCount = -1;
