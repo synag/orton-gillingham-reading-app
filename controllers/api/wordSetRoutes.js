@@ -18,7 +18,7 @@ router.get("/camillaWords", async (req, res) => {
     }
     // const newData = wordData.map((word))
     //   console.log(newData)
-    for (let i = 0; i < 10; i++){
+    for (let i = 0; i < wordData.length; i++) {
      
       newArray.push(wordData[i].word)
       console.log(newArray)
