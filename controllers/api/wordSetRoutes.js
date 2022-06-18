@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Ortonwords } = require("../../model");
+let newArray =[]
 
 //get array word set 1 - Phonetics
 router.get("/camillaWords", async (req, res) => {
@@ -15,8 +16,20 @@ router.get("/camillaWords", async (req, res) => {
       res.status(404).json({ message: "No project found with this id!" });
       return;
     }
+    // const newData = wordData.map((word))
+    //   console.log(newData)
+    for (let i = 0; i < wordData.length; i++){
+     
+      newArray.push(wordData[i].word)
+      console.log(newArray)
 
-    res.status(200).json(wordData);
+      
+    }  
+    
+
+    res.status(200).json(newArray);
+    
+    
   } catch (err) {
     res.status(500).json(err);
   }
