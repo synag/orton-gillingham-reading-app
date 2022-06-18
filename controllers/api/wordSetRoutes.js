@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const { Ortonwords } = require("../../model");
-let newArray =[]
+const newArray =[]
 
 //get array word set 1 - Phonetics
 router.get("/camillaWords", async (req, res) => {
   try {
     const wordData = await Ortonwords.findAll({
       where: {
-        phonetics: "vc",
+        phonetics: "cvc",
         word_owner: "Camilla",
       },
     });
@@ -18,11 +18,10 @@ router.get("/camillaWords", async (req, res) => {
     }
     // const newData = wordData.map((word))
     //   console.log(newData)
-    for (let i = 0; i < wordData.length; i++){
+    for (let i = 0; i < 10; i++){
      
       newArray.push(wordData[i].word)
       console.log(newArray)
-
       
     }  
     

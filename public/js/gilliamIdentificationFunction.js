@@ -2,12 +2,17 @@ finalGilliamWordGroup = [];
 finalLeftWordGroup = [];
 finalRightWordGroup = [];
 let keep = "";
-let wordArrayGroup = ["light", "night", "fright","might"];
-let nextWord = "";
+let wordArrayGroup = [];
+let nextWord ="";
+
+console.log(nextWord);
 
 fetch('/api/wordSetRoutes/camillaWords')
   .then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => wordArrayGroup =data);
+
+
+  console.log(wordArrayGroup)
 
 //push words from database into wordArrayGroup
 
