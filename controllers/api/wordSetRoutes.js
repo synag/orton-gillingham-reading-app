@@ -10,8 +10,7 @@ router.get("/camillaWords", async (req, res) => {
         word_owner: "Camilla",
       },
     });
-    console.log(wordData);
-
+   
     if (!wordData) {
       res.status(404).json({ message: "No project found with this id!" });
       return;

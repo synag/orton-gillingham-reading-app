@@ -5,10 +5,11 @@ let keep = "";
 let wordArrayGroup = ["light", "night", "fright","might"];
 let nextWord = "";
 
+fetch('/api/wordSetRoutes/camillaWords')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
-
-console.log(word_list)
-
+//push words from database into wordArrayGroup
 
 
 function wordSetTime() {
