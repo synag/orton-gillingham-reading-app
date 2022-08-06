@@ -14,6 +14,31 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+router.get("/camilla", async (req, res) => {
+  try {
+   
+    res.render("camilla", {
+      
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+router.get("/sophia", async (req, res) => {
+  try {
+   
+    res.render("sophia", {
+      
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // router.get("/", async (req, res) => {
 //     try {
 //       const wordData = await Ortonwords.findAll({

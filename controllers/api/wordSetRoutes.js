@@ -3,11 +3,14 @@ const { Ortonwords } = require("../../model");
 const newArray =[]
 
 //get array word set 1 - Phonetics
-router.get("/camillaWords", async (req, res) => {
+router.get("/camillaWords/wordset", async (req, res) => {
   try {
     const wordData = await Ortonwords.findAll({
       where: {
-        phonetics: "cvc",
+        // speed: req.body.speed,
+        speed: req.body.speed,
+        wordGroup: req.body.speed,
+        level:req.body.level,//need to define the req.body.zz
         word_owner: "Camilla",
       },
     });
@@ -33,6 +36,7 @@ router.get("/camillaWords", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 //get array word set 2
 //get array word set 3
 //get array word set 4

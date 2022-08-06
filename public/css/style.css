@@ -1,10 +1,52 @@
-.words{
-    margin-top: 2em;
-    font-size: 167px;
-    text-align: center;
-    margin-right: 2em;
+.words {
+position: relative;
+top:-2em;
+  /* margin-top: 2em; */
+  font-size: 167px;
+  text-align: center;
+  /* margin-right: 2em;
+} */}
+
+.background_sophia {
+  background-image: url(../images/1-Title.jpg);
+  min-height: 100%;
+  min-width: 1024px;
+  background-attachment:fixed;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
 }
 
-body{
-    background-image: url(../images/1-Title.jpg);
+.background_camilla {
+  background-image: url(../images/camillapage.jpg);
+  background-size: cover;
+  display: block;
+  background-position-x: -35em;
+  background-position-y: 4em;
+  background-attachment:fixed;
+}
+
+.whiteBox {
+    padding: -4em;
+    background-color: white;
+    padding: 4em;
+    /* inline-size: fit-content; */
+    /* block-size: auto; */
+    margin: 2em;
+    margin-left: 14em;
+    margin-right: 13em;
+    padding-bottom: 21em;
+}
+
+.Btn1{
+    text-align:center;
+    margin-top:15em;
+    flex-direction:row-reverse
 }

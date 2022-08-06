@@ -3,26 +3,77 @@ finalLeftWordGroup = [];
 finalRightWordGroup = [];
 let keep = "";
 let wordArrayGroup = [];
-let nextWord ="";
+let nextWord = "";
 
 console.log(nextWord);
 
-fetch('/api/wordSetRoutes/camillaWords')
-  .then(response => response.json())
-  .then(data => wordArrayGroup =data);
 
 
-  console.log(wordArrayGroup)
+const getWordByLevelHandler= async (event) => {
+  // if (!event.target.id) {
+  //   event.target.setAttribute("id", "check");
+  // } else {
+  //   event.target.removeAttribute("id");
+  // }
+ const level= event.target.parentElement
+
+  const response = await fetch(`/api/wordSetRoutes/camillaWords/wordset`, {
+    method: "GET",
+    body: JSON.stringify({
+      level,
+      wordGroups,
+      speed,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => response.json())
+  .then((data) => (wordArrayGroup = data));
+  console.log(wordArrayGroup);
+
+}
+
+const getWordByLevelButtonHandler =
+  document.getElementsByClassName("level");
+for (const button of getWordByLevelButtonHandler) {
+  button.addEventListener("click", getWordByLevelHandler);
+}
+
+
+
+//Get based on Levels 
+// const response = await fetch(`/api/wordSetRoutes/camillaWords/wordset`, {
+//   method: "GET",
+//   body: JSON.stringify({
+//     level,
+//     wordGroups,
+//     speed,
+//   }),
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// }) .then((response) => response.json())
+// .then((data) => (wordArrayGroup = data));
+// console.log(wordArrayGroup);
+
+// if (response.ok) {
+//   document.location.replace("/expenses");
+
+
+// fetch("/api/wordSetRoutes/camillaWords")
+//   .then((response) => response.json())
+//   .then((data) => (wordArrayGroup = data));
+
+console.log(wordArrayGroup);
 
 //push words from database into wordArrayGroup
-
 
 function wordSetTime() {
   // Sets interval in variable
   let wordCount = -1;
   let timerInterval = setInterval(function () {
     wordCount++;
-   
+
     nextWord = wordArrayGroup[wordCount];
     Gilliamfind(nextWord);
     if (wordCount >= wordArrayGroup.length - 1) {
@@ -30,9 +81,10 @@ function wordSetTime() {
       clearTimeout(timerInterval);
       wordCount = -1;
     }
-  }, 2100);
+  }, 2100); //Make this a variable for time
 }
 
+//Need to make this a database of all the gilliam words 
 function Gilliamfind(el) {
   const check = el;
   const gilliamP1 = [
@@ -42,6 +94,8 @@ function Gilliamfind(el) {
     "ound",
     "y",
     "th",
+    "ag",
+    "am",
     "cb",
     "sh",
     "es",
