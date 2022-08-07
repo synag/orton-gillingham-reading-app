@@ -12,12 +12,7 @@ console.log(nextWord);
 
 
 const getWordByLevelHandler= async (event) => {
-  // if (!event.target.id) {
-  //   event.target.setAttribute("id", "check");
-  // } else {
-  //   event.target.removeAttribute("id");
-  // }
- const level= event.tartget.parent
+  const level =document.querySelector('input[name="levelgroup1"]:checked').value
 
   const response = await fetch(`/api/wordSetRoutes/camillaWords/${level}`,{
     method: "GET",
