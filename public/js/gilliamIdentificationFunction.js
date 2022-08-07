@@ -20,8 +20,8 @@ const getWordByLevelHandler= async (event) => {
   }).then((response) => response.json())
   .then((data) => (wordArrayGroup = data));
   console.log(wordArrayGroup);
+  wordSetTime();
 
-  
 
 }
 
@@ -29,8 +29,9 @@ const getWordByLevelButtonHandler =
   document.getElementsByClassName("level");
 for (const button of getWordByLevelButtonHandler) {
   button.addEventListener("click", getWordByLevelHandler);
-  wordSetTime();
+ 
 }
+
 
 
 
@@ -49,7 +50,7 @@ function wordSetTime() {
 
     nextWord = wordArrayGroup[wordCount];
     Gilliamfind(nextWord);
-    if (wordCount >= wordArrayGroup.length - 1) {
+    if (wordCount >= wordArrayGroup.length - 1) {//This may the issues 8/7/22
       // Stops execution of action at set interval
       clearTimeout(timerInterval);
       wordCount = -1;
